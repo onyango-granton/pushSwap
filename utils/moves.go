@@ -1,4 +1,12 @@
-package utils
+package main
 
+import "fmt"
 
-type struct a
+type stackA struct {
+	stack []int
+}
+
+type stackB struct {
+	stack []int
+}
+
