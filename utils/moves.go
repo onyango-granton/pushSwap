@@ -40,14 +40,37 @@ func pop(stack []int) (int, []int) {
 	return lastElem, stack
 }
 
+func push(elem int,stack []int) {
+	stackLen := len(stack)
+	copyArr := make([]int, stackLen+1)
+	copy(copyArr, stack)
+	copyArr[stackLen] = elem
+	// return copyArr
+}
+
 func (b *stackB) pa(a *stackA) {
 	stackLength := len(b.stack)
 	if stackLength < 1 {
 		return
 	}
+	lastElemB,_ := pop(b.stack)
+	push(lastElemB, a.stack)
 }
+
+func (a *stackB) pb(b *stackA) {
+	stackLength := len(a.stack)
+	if stackLength < 1 {
+		return
+	}
+	lastElemA,_ := pop(a.stack)
+	push(lastElemA, b.stack)
+}
+
+
+func (a *stackA)
 
 func main() {
 	stackA := []int{5, 8, 9, 3, 4, 8, 7}
 	fmt.Println(pop(stackA))
+	// fmt.Println(push(4, stackA))
 }
